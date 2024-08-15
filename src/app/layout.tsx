@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import SiteStrings from "./constants/SiteStrings";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
+
+// const abel = Abel({ weight: '400', subsets: ['latin'] });
+const lato = Lato({ weight: ['300', '400', '700'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Teamscape Travel",
-  description: "Building great group travel experiences for corporate offsites, large friendgroups, sports and other clubs, and solo travellers or smaller groups looking to join up with others.",
+  title: SiteStrings.SiteName,
+  description: SiteStrings.StrapLine,
 };
 
 export default function RootLayout({
@@ -16,7 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Header />
+      <body className={lato.className}>{children}</body>
     </html>
   );
 }
