@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import SiteStrings from '../constants/SiteStrings';
 
 export default function Header() {
@@ -8,7 +9,14 @@ export default function Header() {
       <div className='flex flex-wrap items-center justify-between'>
         <Link href='/' className='flex items-center'>
           <span className='self-center whitespace-nowrap bg-gradient-to-r from-purple-400 to-primary bg-clip-text px-4 py-3 text-2xl text-grey-100 text-transparent hover:opacity-80'>
-            <b>{SiteStrings.SiteName}</b>
+            <Image
+            className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+            src="/logo.svg"
+            alt="Teamscape Travel Logo"
+            width={200}
+            height={80}
+            priority
+            />
           </span>
         </Link>
 
